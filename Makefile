@@ -7,7 +7,8 @@ LINK_FLAGS=
 SO_FILE=bin/libconjugar.so
 
 # All of the objects to be put into the SO_FILE.
-OBJECTS=
+# Make sure to put in alphabetical order!
+OBJECTS=obj/stem.o obj/verb.o
 
 all: $(SO_FILE)
 
