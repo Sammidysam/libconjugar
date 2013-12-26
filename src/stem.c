@@ -2,7 +2,7 @@
 
 #include <string.h>
 
-char *get_stem(char *verb)
+char *cjr_get_stem(char *verb)
 {
 	return verb;
 }

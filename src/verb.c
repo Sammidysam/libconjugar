@@ -1,8 +1,9 @@
 #include "verb.h"
 
+/* Includes from the corresponding header file. */
 // #include <stdbool.h>
 
-bool is_verb(char *verb)
+bool cjr_is_verb(char *verb)
 {
 	return true;
 }
