@@ -1,6 +1,9 @@
 #include "verb.h"
 
-/* Includes from the corresponding header file. */
+#include "stem.h"
+
+/* Includes from other header files. */
+/* verb.h */
 // #include <stdbool.h>
 
 bool cjr_is_verb(char *verb)
