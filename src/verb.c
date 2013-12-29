@@ -12,8 +12,11 @@
  * If it has a valid ending, the function will return that ending.
  * If the ending is not valid, the function will return "".
  *
- * cjr_is_verb(char *verb) calls this function, so
- * do not call that function within this function!
+ * Other functions that call this function
+ *
+ * cjr_is_verb
+ * cjr_is_verb_type
+ * cjr_is_reflexive (through calling cjr_is_verb_type)
  */
 char *cjr_get_ending(char *verb)
 {
@@ -22,21 +25,21 @@ char *cjr_get_ending(char *verb)
 	char *last_two_characters = &verb[(strlen(verb) > 2) ? (strlen(verb) - 2) : 0];
 
 	/* If ending is se, then we need to get more information. */
-	if (strcmp(last_two_characters, "se") == 0) {
+	if (strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_REFLEXIVE)) == 0) {
 		/*
 		 * We need the last four characters to determine
 		 * what kind of verb ending in "se" it is.
 		 */
 		char *last_four_characters = &verb[(strlen(verb) > 4) ? (strlen(verb) - 4) : 0];
 
-		if (strcmp(last_four_characters, "arse") == 0
-		    || strcmp(last_four_characters, "erse") == 0
-		    || strcmp(last_four_characters, "irse") == 0)
+		if (strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_ARSE)) == 0
+		    || strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_ERSE)) == 0
+		    || strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_IRSE)) == 0)
 			ending = last_four_characters;
 	} else {
-		if (strcmp(last_two_characters, "ar") == 0
-		    || strcmp(last_two_characters, "er") == 0
-		    || strcmp(last_two_characters, "ir") == 0)
+		if (strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_AR)) == 0
+		    || strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_ER)) == 0
+		    || strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_IR)) == 0)
 			ending = last_two_characters;
 	}
 	
