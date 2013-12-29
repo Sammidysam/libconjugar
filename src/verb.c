@@ -92,5 +92,7 @@ bool cjr_is_verb_type(char *verb, cjr_verb_type_t type)
 /* Determines if string verb is reflexive (ends in "se"). */
 bool cjr_is_reflexive(char *verb)
 {
-	return cjr_is_verb_type(verb, CJR_VERB_TYPE_REFL);
+	return cjr_is_verb_type(verb, CJR_VERB_TYPE_REFL_AR)
+		|| cjr_is_verb_type(verb, CJR_VERB_TYPE_REFL_ER)
+		|| cjr_is_verb_type(verb, CJR_VERB_TYPE_REFL_IR);
 }
