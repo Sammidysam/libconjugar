@@ -43,8 +43,45 @@ char *cjr_get_ending(char *verb)
 	return strlen(ending) == 0 ? "" : ending;
 }
 
+/*
+ * Retrieves the verb ending for verb type type.
+ * Functions as a const char pointer array, but
+ * does not add a variable to the end user's program.
+ *
+ * If type is not known, "" will be returned.
+ *
+ * TODO: Put verb endings on configuration file?
+ */
+char *cjr_verb_ending(cjr_verb_type_t type)
+{
+	switch (type) {
+		case CJR_VERB_AR:
+			return "ar";
+		case CJR_VERB_ER:
+			return "er";
+		case CJR_VERB_IR:
+			return "ir";
+		case CJR_VERB_SE:
+			return "se";
+		case CJR_VERB_ARSE:
+			return "arse";
+		case CJR_VERB_ERSE:
+			return "erse";
+		case CJR_VERB_IRSE:
+			return "irse";
+		default:
+			return "";
+	}
+}
+
 /* Determines if string verb is a valid Spanish verb. */
 bool cjr_is_verb(char *verb)
 {
 	return strlen(cjr_get_ending(verb)) > 0;
+}
+
+/* Determines if string verb is of type type. */
+bool cjr_is_verb_type(char *verb, cjr_verb_type_t type)
+{
+	return strcmp(cjr_get_ending(verb), cjr_verb_ending(type)) == 0;
 }
