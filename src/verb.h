@@ -5,4 +5,6 @@
 
 bool cjr_is_verb(char *verb);
 
+char *cjr_get_ending(char *verb);
+
 #endif

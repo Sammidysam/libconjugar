@@ -8,4 +8,4 @@ $(SO_FILE): $(OBJECTS)
 # All must be in variable $(OBJECTS).
 # Make sure to put in alphabetical order!
 obj/stem.o: src/stem.c src/stem.h src/verb.h
-obj/verb.o: src/verb.c src/verb.h src/stem.h
+obj/verb.o: src/verb.c src/verb.h
