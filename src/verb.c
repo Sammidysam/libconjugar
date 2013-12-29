@@ -25,21 +25,21 @@ char *cjr_get_ending(char *verb)
 	char *last_two_characters = &verb[(strlen(verb) > 2) ? (strlen(verb) - 2) : 0];
 
 	/* If ending is se, then we need to get more information. */
-	if (strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_REFLEXIVE)) == 0) {
+	if (strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_TYPE_REFL)) == 0) {
 		/*
 		 * We need the last four characters to determine
 		 * what kind of verb ending in "se" it is.
 		 */
 		char *last_four_characters = &verb[(strlen(verb) > 4) ? (strlen(verb) - 4) : 0];
 
-		if (strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_ARSE)) == 0
-		    || strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_ERSE)) == 0
-		    || strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_IRSE)) == 0)
+		if (strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_TYPE_REFL_AR)) == 0
+		    || strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_TYPE_REFL_ER)) == 0
+		    || strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_TYPE_REFL_IR)) == 0)
 			ending = last_four_characters;
 	} else {
-		if (strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_AR)) == 0
-		    || strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_ER)) == 0
-		    || strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_IR)) == 0)
+		if (strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_TYPE_AR)) == 0
+		    || strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_TYPE_ER)) == 0
+		    || strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_TYPE_IR)) == 0)
 			ending = last_two_characters;
 	}
 	
@@ -58,19 +58,19 @@ char *cjr_get_ending(char *verb)
 char *cjr_verb_ending(cjr_verb_type_t type)
 {
 	switch (type) {
-		case CJR_VERB_AR:
+		case CJR_VERB_TYPE_AR:
 			return "ar";
-		case CJR_VERB_ER:
+		case CJR_VERB_TYPE_ER:
 			return "er";
-		case CJR_VERB_IR:
+		case CJR_VERB_TYPE_IR:
 			return "ir";
-		case CJR_VERB_REFLEXIVE:
+		case CJR_VERB_TYPE_REFL:
 			return "se";
-		case CJR_VERB_ARSE:
+		case CJR_VERB_TYPE_REFL_AR:
 			return "arse";
-		case CJR_VERB_ERSE:
+		case CJR_VERB_TYPE_REFL_ER:
 			return "erse";
-		case CJR_VERB_IRSE:
+		case CJR_VERB_TYPE_REFL_IR:
 			return "irse";
 		default:
 			return "";
@@ -92,5 +92,5 @@ bool cjr_is_verb_type(char *verb, cjr_verb_type_t type)
 /* Determines if string verb is reflexive (ends in "se"). */
 bool cjr_is_reflexive(char *verb)
 {
-	return cjr_is_verb_type(verb, CJR_VERB_REFLEXIVE);
+	return cjr_is_verb_type(verb, CJR_VERB_TYPE_REFL);
 }
