@@ -7,12 +7,6 @@
 /* verb.h */
 // #include <stdbool.h>
 
-/* Determines if string verb is a valid Spanish verb. */
-bool cjr_is_verb(char *verb)
-{
-	return strlen(cjr_get_ending(verb)) > 0;
-}
-
 /*
  * Retrieves the ending of string verb.
  * If it has a valid ending, the function will return that ending.
@@ -47,4 +41,10 @@ char *cjr_get_ending(char *verb)
 	}
 	
 	return strlen(ending) == 0 ? "" : ending;
+}
+
+/* Determines if string verb is a valid Spanish verb. */
+bool cjr_is_verb(char *verb)
+{
+	return strlen(cjr_get_ending(verb)) > 0;
 }
