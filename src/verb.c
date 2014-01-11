@@ -32,14 +32,14 @@ char *cjr_get_ending(char *verb)
 		 */
 		char *last_four_characters = &verb[(strlen(verb) > 4) ? (strlen(verb) - 4) : 0];
 
-		if (strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_TYPE_REFL_AR)) == 0
-		    || strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_TYPE_REFL_ER)) == 0
-		    || strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_TYPE_REFL_IR)) == 0)
+		if (strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_TYPE_REFL_AR)) == 0 ||
+		    strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_TYPE_REFL_ER)) == 0 ||
+		    strcmp(last_four_characters, cjr_verb_ending(CJR_VERB_TYPE_REFL_IR)) == 0)
 			ending = last_four_characters;
 	} else {
-		if (strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_TYPE_AR)) == 0
-		    || strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_TYPE_ER)) == 0
-		    || strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_TYPE_IR)) == 0)
+		if (strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_TYPE_AR)) == 0 ||
+		    strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_TYPE_ER)) == 0 ||
+		    strcmp(last_two_characters, cjr_verb_ending(CJR_VERB_TYPE_IR)) == 0)
 			ending = last_two_characters;
 	}
 	
@@ -92,7 +92,7 @@ bool cjr_is_verb_type(char *verb, cjr_verb_type_t type)
 /* Determines if string verb is reflexive (ends in "se"). */
 bool cjr_is_reflexive(char *verb)
 {
-	return cjr_is_verb_type(verb, CJR_VERB_TYPE_REFL_AR)
-		|| cjr_is_verb_type(verb, CJR_VERB_TYPE_REFL_ER)
-		|| cjr_is_verb_type(verb, CJR_VERB_TYPE_REFL_IR);
+	return cjr_is_verb_type(verb, CJR_VERB_TYPE_REFL_AR) ||
+		cjr_is_verb_type(verb, CJR_VERB_TYPE_REFL_ER) ||
+		cjr_is_verb_type(verb, CJR_VERB_TYPE_REFL_IR);
 }
