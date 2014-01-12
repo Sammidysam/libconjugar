@@ -19,6 +19,13 @@ char *cjr_get_stem(char *verb)
 	size_t verb_length = strlen(verb);
 	size_t chars_to_delete = strlen(cjr_get_ending(verb));
 
+	/*
+	 * If a verb is only an ending.
+	 * Example: ir
+	 */
+	if (chars_to_delete >= verb_length)
+		return "";
+
 	/* verb is not modifiable, so we need a copy to modify. */
 	char *verb_return = malloc(sizeof(char) * verb_length);
 	strcpy(verb_return, verb);
