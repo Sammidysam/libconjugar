@@ -37,6 +37,13 @@ START_TEST(test_stem_short_non_verbs)
 }
 END_TEST
 
+START_TEST(test_stem_short_verbs)
+{
+	ck_assert_str_eq(cjr_get_stem("ser"), "s");
+	ck_assert_str_eq(cjr_get_stem("ver"), "v");
+}
+END_TEST
+
 TCase *stem_case(void)
 {
 	TCase *stem = tcase_create("Stem");
@@ -44,6 +51,7 @@ TCase *stem_case(void)
 	tcase_add_test(stem, test_stem_actual_verbs);
 	tcase_add_test(stem, test_stem_not_verbs);
 	tcase_add_test(stem, test_stem_short_non_verbs);
+	tcase_add_test(stem, test_stem_short_verbs);
 
 	return stem;
 }
