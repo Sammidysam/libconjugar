@@ -28,9 +28,8 @@ START_TEST(test_stem_not_verbs)
 }
 END_TEST
 
-START_TEST(test_stem_short_words)
+START_TEST(test_stem_short_non_verbs)
 {
-	/* Test short English words. */
 	ck_assert_str_eq(cjr_get_stem("a"), "");
 	ck_assert_str_eq(cjr_get_stem("an"), "");
 	ck_assert_str_eq(cjr_get_stem("the"), "");
@@ -44,7 +43,7 @@ TCase *stem_case(void)
 	
 	tcase_add_test(stem, test_stem_actual_verbs);
 	tcase_add_test(stem, test_stem_not_verbs);
-	tcase_add_test(stem, test_stem_short_words);
+	tcase_add_test(stem, test_stem_short_non_verbs);
 
 	return stem;
 }
