@@ -6,7 +6,7 @@ COMPILE_FLAGS=-fPIC
 LINK_FLAGS=
 
 SO_FILE=bin/libconjugar.so
-TEST_FILE=bin/test
+TEST_FILE=bin/test.$(shell arch)
 
 # All of the objects to be put into the SO_FILE.
 # Make sure to put in alphabetical order!
