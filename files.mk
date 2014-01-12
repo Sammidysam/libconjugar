@@ -4,14 +4,13 @@ obj/%.o:
 $(SO_FILE): $(OBJECTS)
 	$(CC) -shared -o $(SO_FILE) $(OBJECTS) $(FLAGS) $(LINK_FLAGS)
 
-$(TEST_FILE): $(TEST_OBJECTS) $(OBJECTS)
-	$(CC) -o $(TEST_FILE) $(TEST_OBJECTS) $(OBJECTS) $(FLAGS) $(TEST_FLAGS)
+$(TEST_FILE): $(TEST_OBJECTS) $(SO_FILE)
+	$(CC) -o $(TEST_FILE) $(TEST_OBJECTS) $(FLAGS) $(TEST_FLAGS)
 
-# List all of the objects and their dependencies.
-# All must be in variable $(OBJECTS).
-# Make sure to put in alphabetical order!
-obj/stem.o: $(addprefix src/,stem.c stem.h verb.h)
+# Program objects.
+obj/stem.o: $(addprefix src/,stem.c stem.h) $(addprefix obj/,verb.o)
 obj/verb.o: $(addprefix src/,verb.c verb.h)
 
 # Test objects.
 obj/test.o: $(addprefix test/,test.c)
+obj/test_stem.o: $(addprefix test/,test_stem.c test_stem.h) $(addprefix obj/,stem.o)
