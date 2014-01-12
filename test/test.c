@@ -19,7 +19,7 @@ END_TEST
 
 START_TEST(test_stem_not_verbs)
 {
-	/* Ensure that it does not see words that are not verbs as verbs. */
+	/* When cjr_get_stem returns "", the word is not a verb. */
 	ck_assert_str_eq(cjr_get_stem("funny"), "");
 	ck_assert_str_eq(cjr_get_stem("words"), "");
 }
