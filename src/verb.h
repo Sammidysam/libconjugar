@@ -15,6 +15,7 @@ typedef enum {
 } cjr_verb_type_t;
 
 char *cjr_get_ending(char *verb);
+cjr_verb_type_t cjr_get_verb_type(char *verb);
 
 char *cjr_verb_ending(cjr_verb_type_t type);
 

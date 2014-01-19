@@ -41,6 +41,21 @@ char *cjr_get_ending(char *verb)
 }
 
 /*
+ * Maps the return value of cjr_get_ending to the enum cjr_verb_type_t.
+ * Will return -1 if the verb is not a valid verb.
+ * Does not deal with verbs ending in "se", for that
+ * see the function cjr_is_reflexive.
+ */
+cjr_verb_type_t cjr_get_verb_type(char *verb)
+{
+	for (int i = CJR_VERB_TYPE_AR; i <= CJR_VERB_TYPE_REFL_IR; i++)
+		if (strcmp(cjr_get_ending(verb), cjr_verb_ending(i)) == 0)
+			return i;
+
+	return -1;
+}
+
+/*
  * Retrieves the verb ending for verb type type.
  * Functions as a const char pointer array, but
  * does not add a variable to the end user's program.

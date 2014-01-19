@@ -11,7 +11,7 @@ TEST_FILE=bin/test.$(shell arch)
 # All of the objects to be put into the SO_FILE.
 # Make sure to put in alphabetical order!
 OBJECTS=$(addprefix obj/,stem.o verb.o)
-TEST_OBJECTS=$(addprefix obj/,test.o test_stem.o)
+TEST_OBJECTS=$(addprefix obj/,test.o test_stem.o test_verb.o)
 
 all: $(SO_FILE) $(TEST_FILE)
 

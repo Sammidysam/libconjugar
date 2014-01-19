@@ -3,6 +3,7 @@
 #include <check.h>
 
 #include "test_stem.h"
+#include "test_verb.h"
 
 Suite *libconjugar_suite()
 {
@@ -10,6 +11,7 @@ Suite *libconjugar_suite()
 
 	/* Add groups of tests to the suite. */
 	suite_add_tcase(suite, stem_case());
+	suite_add_tcase(suite, verb_case());
 
 	return suite;
 }

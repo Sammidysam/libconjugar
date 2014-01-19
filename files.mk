@@ -14,3 +14,4 @@ obj/verb.o: $(addprefix src/,verb.c verb.h)
 # Test objects.
 obj/test.o: $(addprefix test/,test.c)
 obj/test_stem.o: $(addprefix test/,test_stem.c test_stem.h) $(addprefix obj/,stem.o)
+obj/test_verb.o: $(addprefix test/,test_verb.c test_verb.h) $(addprefix obj/,verb.o)
