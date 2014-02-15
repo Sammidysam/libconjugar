@@ -41,16 +41,6 @@ START_TEST(test_stem_short_verbs)
 {
 	ck_assert_str_eq(cjr_get_stem("ser"), "s");
 	ck_assert_str_eq(cjr_get_stem("ver"), "v");
-}
-END_TEST
-
-/*
- * In default configuration, the stem or ir will be "v".
- * Adjust test when configuration gets added.
- */
-START_TEST(test_stem_ir)
-{
-	/* Do not use configuration. */
 	ck_assert_str_eq(cjr_get_stem("ir"), "");
 }
 END_TEST
@@ -63,7 +53,6 @@ TCase *stem_case(void)
 	tcase_add_test(stem, test_stem_not_verbs);
 	tcase_add_test(stem, test_stem_short_non_verbs);
 	tcase_add_test(stem, test_stem_short_verbs);
-	tcase_add_test(stem, test_stem_ir);
 
 	return stem;
 }
