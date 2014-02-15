@@ -46,7 +46,7 @@ END_TEST
 
 START_TEST(test_verb_ending_ir)
 {
-	ck_assert_str_eq(cjr_get_ending("ir"), "");
+	ck_assert_str_eq(cjr_get_ending("ir"), "ir");
 }
 END_TEST
 
@@ -58,6 +58,7 @@ TCase *verb_case(void)
 	tcase_add_test(verb, test_verb_ending_not_verbs);
 	tcase_add_test(verb, test_verb_ending_short_non_verbs);
 	tcase_add_test(verb, test_verb_ending_short_verbs);
+	tcase_add_test(verb, test_verb_ending_ir);
 
 	return verb;
 }
