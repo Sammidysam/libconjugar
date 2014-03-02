@@ -10,7 +10,7 @@ These problems were
   Being written in a scripting language usually forces code that uses the code to be written in the same language.
   C code can be used in multiple languages, which causes it to make sense as a universal library selection.
   However, only Vala is currently planned to *use* the C code.
-  If ported to other languages such as Python or Ruby, it is likely that the library would be rewritten in those languages.
+  If ported to other languages such as Ruby or Python, it is likely that the library would be rewritten in those languages.
 * their configuration systems were horrible.
 
   The other programs that have been made have not advertised their amazing configuration systems.
