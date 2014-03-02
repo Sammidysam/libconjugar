@@ -17,6 +17,7 @@ These problems were
   This is an incredibly dumb way to go about conjugating Spanish verbs.
   There are patterns in the conjugations, so why not let the computer manipulate them?
   In other cases, some patterns can be written, but not in a very efficient manner; configuration is repeated in the configuration file(s).
+
 This library seeks to fix the two problems, resulting in a library that is easy to use, usable in many cases and places, and has a good, quick, and simple configuration system.
 
 License
