@@ -6,11 +6,13 @@ It is programmed in C with Vala bindings provided.
 It was made because other programs that conjugated Spanish verbs had some problems.
 These problems were
 * they were always written in a scripting language.
+
   Being written in a scripting language usually forces code that uses the code to be written in the same language.
   C code can be used in multiple languages, which causes it to make sense as a universal library selection.
   However, only Vala is currently planned to *use* the C code.
   If ported to other languages such as Python or Ruby, it is likely that the library would be rewritten in those languages.
 * their configuration systems were horrible.
+
   The other programs that have been made have not advertised their amazing configuration systems.
   It causes the impression that their program does not have an easy system for adding new irregular verbs.
   In some cases, it looks like the program has each conjugation of the verb listed out.
