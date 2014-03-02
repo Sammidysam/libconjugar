@@ -1,5 +1,4 @@
-libconjugar
-===========
+# libconjugar
 
 Libconjugar is a Spanish conjugation library.
 It is programmed in C with Vala bindings provided.
@@ -22,8 +21,7 @@ These problems were
 
 This library seeks to fix the two problems, resulting in a library that is easy to use, usable in many cases and places, and has a good, quick, and simple configuration system.
 
-License
--------
+## License
 
 This program is licensed under the GNU General Public License version 3.
 To see the license, visit the file [LICENSE](LICENSE).
