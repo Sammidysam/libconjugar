@@ -3,7 +3,7 @@ libconjugar
 
 Libconjugar is a Spanish conjugation library.
 It is programmed in C with Vala bindings provided.
-It was made because other programs that conjugated Spanish verbs had some problems.
+It was made because other programs that conjugated Spanish verbs had some major problems.
 These problems were
 * they were almost always written in a scripting language.
 
